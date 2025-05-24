@@ -456,8 +456,8 @@ public class App {
                 if (string == null) return;
                 StringBuilder sb = new StringBuilder(fb.getDocument().getText(0, fb.getDocument().getLength()));
                 sb.insert(offset, string);
-                //kalo inputnya cocok dengan regex \\d{0,2} \\d artinya angka dan {0,2} itu artinya maksimal 2 digit bakalan manggil insertstring yang kemudian diacc oleh filterbypass dan masuk textfield
-                if (sb.toString().matches("\\d{0,2}")) {
+                //kalo inputnya cocok dengan regex "^(100|[1-9]?[0-9])$" artinya semua input angka 2 digit dari 0-100 bakalan manggil insertstring yang kemudian diacc oleh filterbypass dan masuk textfield
+                if ((sb.toString().matches("^(100|[1-9]?[0-9])$") || sb.toString().matches(""))) {
                     super.insertString(fb, offset, string, attr);
                 }
             }
@@ -467,7 +467,7 @@ public class App {
                 if (text == null) return;
                 StringBuilder sb = new StringBuilder(fb.getDocument().getText(0, fb.getDocument().getLength()));
                 sb.replace(offset, offset + length, text);
-                if (sb.toString().matches("\\d{0,2}")) {
+                if ((sb.toString().matches("^(100|[1-9]?[0-9])$") || sb.toString().matches(""))) {
                     super.replace(fb, offset, length, text, attrs);
                 }
             }
@@ -511,7 +511,7 @@ public class App {
                 if (string == null) return;
                 StringBuilder sb = new StringBuilder(fb.getDocument().getText(0, fb.getDocument().getLength()));
                 sb.insert(offset, string);
-                if (sb.toString().matches("\\d{0,2}")) {
+                if ((sb.toString().matches("^(100|[1-9]?[0-9])$") || sb.toString().matches(""))) {
                     super.insertString(fb, offset, string, attr);
                 }
             }
@@ -520,7 +520,7 @@ public class App {
                 if (text == null) return;
                 StringBuilder sb = new StringBuilder(fb.getDocument().getText(0, fb.getDocument().getLength()));
                 sb.replace(offset, offset + length, text);
-                if (sb.toString().matches("\\d{0,2}")) {
+                if ((sb.toString().matches("^(100|[1-9]?[0-9])$") || sb.toString().matches(""))) {
                     super.replace(fb, offset, length, text, attrs);
                 }
             }
@@ -565,7 +565,7 @@ public class App {
                 if (string == null) return;
                 StringBuilder sb = new StringBuilder(fb.getDocument().getText(0, fb.getDocument().getLength()));
                 sb.insert(offset, string);
-                if (sb.toString().matches("\\d{0,2}")) {
+                if ((sb.toString().matches("^(100|[1-9]?[0-9])$") || sb.toString().matches(""))) {
                     super.insertString(fb, offset, string, attr);
                 }
             }
@@ -574,7 +574,7 @@ public class App {
                 if (text == null) return;
                 StringBuilder sb = new StringBuilder(fb.getDocument().getText(0, fb.getDocument().getLength()));
                 sb.replace(offset, offset + length, text);
-                if (sb.toString().matches("\\d{0,2}")) {
+                if ((sb.toString().matches("^(100|[1-9]?[0-9])$") || sb.toString().matches(""))) {
                     super.replace(fb, offset, length, text, attrs);
                 }
             }
@@ -619,7 +619,7 @@ public class App {
                 if (string == null) return;
                 StringBuilder sb = new StringBuilder(fb.getDocument().getText(0, fb.getDocument().getLength()));
                 sb.insert(offset, string);
-                if (sb.toString().matches("\\d{0,2}")) {
+                if ((sb.toString().matches("^(100|[1-9]?[0-9])$") || sb.toString().matches(""))) {
                     super.insertString(fb, offset, string, attr);
                 }
             }
@@ -628,7 +628,7 @@ public class App {
                 if (text == null) return;
                 StringBuilder sb = new StringBuilder(fb.getDocument().getText(0, fb.getDocument().getLength()));
                 sb.replace(offset, offset + length, text);
-                if (sb.toString().matches("\\d{0,2}")) {
+                if ((sb.toString().matches("^(100|[1-9]?[0-9])$") || sb.toString().matches(""))) {
                     super.replace(fb, offset, length, text, attrs);
                 }
             }
